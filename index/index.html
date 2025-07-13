@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestellApp</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <script src="../js/render.js"></script>
+    <script src="../js/restauranttemplate.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body onload="renderRestaurantSection()">
+
+    <header class="hero">
+        <div id="menurow" class="menurow-positon">
+            
+            <nav class="navbar">
+                <a  href="../index/index.html"><img class="navbarLogo" src="../img/Logo.png" alt="logo"></a>
+                <hr class="solid">   
+                <ul>
+                    <li><a href="../index/index.html">Startseite</a></li>
+
+                    <li class="dropdown">
+                        <a href="#restaurants" class="dropbtn">Restaurants</a>
+                        <div class="dropdown-content">
+                            <a href="../index/velvet.html">The Velvet Fork</a>
+                            <a href="../index/eclipse.html">Eclipse Dining</a>
+                            <a href="../index/celestial.html">Celestial Table</a>
+                        </div>
+                    </li>
+
+
+                    <li class="location">
+                        <button class="location-dropdown-btn">Berlin</button>
+                        <div class="location-dropdown-content">
+                            <a href="#" data-location="berlin">Berlin</a>
+                            <a href="#" data-location="hamburg">Hamburg</a>
+                            <a href="#" data-location="muenchen">München</a>
+                            <a href="#" data-location="frankfurt">Frankfurt</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="restaurant_content">
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#menurow"><img class="footer-content-logo" src="../img/Logo.png" alt=""></a>
+            <div class="contact">
+                <p>&copy; 2024 BestellApp | Designed by Nico Merz</p>
+            </div>
+
+            <div class="footer-section social">
+                <h2>Folgen Sie uns</h2>
+                <div class="social-icons">
+                    <a class="" href="https://www.facebook.com/developer.akademie/" target=" _blank"><img
+                            src="../icons/facebook-48.png" alt=""></a>
+                    <a href="https://www.youtube.com/watch?v=XppnZ5n3Z04" target=" _blank"><img
+                            src="../icons/youtube-48.png" alt=""></a>
+                    <a href="https://www.instagram.com/developer.akademie/?hl=de" target=" _blank"><img
+                            src="../icons/icons8-instagram-48.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/location.js"></script>
+</body>
+
+</html>
