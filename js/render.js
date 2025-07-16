@@ -1,7 +1,7 @@
 const restaurantMapping = {
-  velvet: "velvet_menu_container",
-  celestial: "celestial_menu_container",
-  eclipse: "eclipse_menu_container",
+  velvet: "velvetMenuContainer",
+  celestial: "celestialMenuContainer",
+  eclipse: "eclipseMenuContainer",
 };
 
 function renderMenu(data, restaurantName) {
@@ -41,14 +41,18 @@ function renderCategory(dishes, categoryName) {
   dishes.forEach((dish, index) => getDishHTML(dish, categoryName, index));
 
   function getDishHTML(dish, categoryName, index) {
-    categoryDishes += `<div class="menu-item">
-    <img class="menu-item-img" src="${dish.img}" alt="${dish.alt}">
-    <h3 class="menu-item-name">${dish.name}</h3>
-    <p class="menu-item-price">Preis: ${dish.price
-      .toFixed(2)
-      .replace(".", ",")} €</p>
-    <button class="addToCartButton menu-item-button" data-category="${categoryName}" data-index="${index}">In den Warenkorb</button>
-      </div>`;
+    categoryDishes += `
+    <div class="menuItem" style="background-image: url('${dish.img}')">
+      <div class="menuItemOverlay"></div>
+      <div class="menuItemContent">
+        <div class="menuItemText">
+          <div class="menuItemName">${dish.name}</div>
+          <div class="menuItemDesc">${dish.desc || ''}</div>
+          <div class="menuItemPrice">${dish.price.toFixed(2).replace('.', ',')} €</div>
+        </div>
+        <button class="addToCartButton menuItemButton" data-category="${categoryName}" data-index="${index}">Hinzufügen</button>
+      </div>
+    </div>`;
   }
   categoryDishes += `</div>
                         </div>`;
@@ -67,14 +71,14 @@ function toogleShoppingCart(params) {
 function generateShoppingCartHTML(items) {
   return items
     .map(
-      (item) => `<div class="shopping-cart-item" data-item="${item.category}-${
+      (item) => `<div class="shoppingCartItem" data-item="${item.category}-${
         item.index
       }">
-          <div class="item-name">${item.name}</div>
+          <div class="itemName">${item.name}</div>
           <button class="decrease"><</button>
-          <div class="item-quantity">${item.quantity}</div>
+          <div class="itemQuantity">${item.quantity}</div>
           <button class="increase">></button>
-          <div class="item-price">${(item.pricePerUnit * item.quantity).toFixed(
+          <div class="itemPrice">${(item.pricePerUnit * item.quantity).toFixed(
             2
           )} €</div>
           <button onclick="removeFromCart(event)" class="remove">X</button>
@@ -94,7 +98,7 @@ function renderShoppingCart() {
 }
 
 function removeFromCart(event) {
-  const cartItemElement = event.target.closest(".shopping-cart-item");
+  const cartItemElement = event.target.closest(".shoppingCartItem");
   if (cartItemElement) {
     const itemData = cartItemElement.getAttribute("data-item");
     const [category, index] = itemData.split("-");

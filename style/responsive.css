@@ -1,0 +1,134 @@
+@media(max-width: 804px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .menurowPosition img {
+        display: none;
+    }
+
+    .menurowPosition {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        font-size: 1.5rem;
+    }
+
+    #restaurant_content {
+        padding-top: 340px;
+        padding-bottom: 100px;
+    }
+
+    .restaurant_content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 25px 70px 25px;
+    }
+
+    .restaurant_content h1 {
+        font-size: 2.2rem;
+    }
+
+    .restaurant_content h2 {
+        font-size: 1.1rem;
+        margin: 15px auto 35px auto;
+    }
+
+    .restaurant_logo {
+        height: 70px;
+        width: 70px;
+    }
+
+    .restaurant_name {
+        font-size: 1.1rem;
+    }
+
+    .restaurant_box {
+        padding: 25px;
+    }
+
+    .restaurant_details {
+        align-items: flex-start;
+        padding: 10px 14px;
+    }
+}
+
+@media(max-width: 650px) {
+    #restaurant_content {
+        padding-top: 310px;
+        padding-bottom: 90px;
+    }
+
+    .restaurant_content {
+        padding: 0 20px 50px 20px;
+        gap: 20px;
+    }
+
+    .restaurant_box {
+        padding: 20px;
+    }
+
+    .restaurant_logo {
+        height: 60px;
+        width: 60px;
+        margin-right: 12px;
+    }
+
+    .restaurant_details {
+        display: none;
+    }
+
+    .restaurant_header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .restaurant_logo {
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+}
+
+@media(max-width: 460px) {
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 7px 10px;
+    }
+
+    .hero-content {
+        margin-top: 30px;
+    }
+
+    #restaurant_content {
+        padding-top: 280px;
+        padding-bottom: 80px;
+    }
+
+    .restaurant_content {
+        padding: 0 15px 40px 15px;
+    }
+
+    .restaurant_box {
+        padding: 20px;
+    }
+}
+
+@media(max-width: 345px) {
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 4px 6px;
+    }
+}

@@ -54,31 +54,32 @@ function generateRestaurantHTML({
   deliveryTime,
   paymentIcons,
 }) {
-  return `<div class="restaurant_box">
-      <div class="restaurant_header">
-        <img class="restaurant_logos" src="${image}" alt="${title} logo">
-        <div class="restaurant_info">
+  return `
+    <div class="restaurantBox">
+      <div class="restaurantHeader">
+        <img class="restaurantLogos" src="${image}" alt="${title} logo">
+        <div class="restaurantInfo">
           <h3>${title}</h3>
           </div>
           </div>
           
-          <div class="restaurant_details">
+          <div class="restaurantDetails">
           <div class="rating">
             ${generateStars(rating)}
-            <span class="rating-text">${ratingCount} Bewertungen</span>
+            <span class="ratingText">${ratingCount} Bewertungen</span>
           </div>
-        <div class="delivery_info">
-          <div class="delivery_time">
+        <div class="deliveryInfo">
+          <div class="deliveryTime">
             <img src="../icons/time-span-32.png" alt="Delivery time icon">
             <span>${deliveryTime}-69 min</span>
           </div>
-          <div class="payment_methods">
+          <div class="paymentMethods">
             ${generatePaymentIcons(paymentIcons)}
           </div>
         </div>
         
-        <div class="restaurant_actions">
-          <a href="${link}" class="order_button">
+        <div class="restaurantActions">
+          <a href="${link}" class="orderButton">
             <button>Bestellen</button>
           </a>
         </div>
@@ -88,14 +89,18 @@ function generateRestaurantHTML({
 
 function getRestaurantSection() {
   return `
-    <div id="restaurants" class="restaurant_content">
-      <h1>Bestellen Sie Ihr Fine Dine Erlebnis zu sich!</h1>
+    <div id="restaurants" class="restaurantContent">
+    <div class="IndexHero">
+    <h1>Gourmeterlebnis auf Bestellung</h1>
+      <h2>Bestellen Sie Ihr Fine Dine Erlebnis zu sich!</h2>
       <h2>Frisch zubereitet und schnell geliefert, direkt vor Ihre Haustür oder Büro.</h2>
+     </div>
+      <div class="IndexRestaurant">
       ${restaurantData.map(generateRestaurantHTML).join("")}
     </div>`;
 }
 
 function renderRestaurantSection() {
-  document.getElementById("restaurant_content").innerHTML +=
+  document.getElementById("restaurantContent").innerHTML +=
     getRestaurantSection();
 }

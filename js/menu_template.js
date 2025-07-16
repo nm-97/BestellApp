@@ -331,7 +331,7 @@ function generateMenuCards() {
     }
     
     // Vorspeisen rendern
-    const startersContainer = document.getElementById('starters_menu');
+    const startersContainer = document.getElementById('startersMenu');
     if (startersContainer && restaurantData.menu.Vorspeisen) {
         startersContainer.innerHTML = '';
         restaurantData.menu.Vorspeisen.forEach(dish => {
@@ -340,7 +340,7 @@ function generateMenuCards() {
     }
     
     // Hauptspeisen rendern
-    const mainContainer = document.getElementById('main_menu');
+    const mainContainer = document.getElementById('mainMenu');
     if (mainContainer && restaurantData.menu.Hauptspeisen) {
         mainContainer.innerHTML = '';
         restaurantData.menu.Hauptspeisen.forEach(dish => {
@@ -349,7 +349,7 @@ function generateMenuCards() {
     }
     
     // Nachspeisen rendern
-    const dessertContainer = document.getElementById('dessert_menu');
+    const dessertContainer = document.getElementById('dessertMenu');
     if (dessertContainer && restaurantData.menu.Nachspeisen) {
         dessertContainer.innerHTML = '';
         restaurantData.menu.Nachspeisen.forEach(dish => {

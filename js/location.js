@@ -1,7 +1,7 @@
 // Location Dropdown Funktionalität
 document.addEventListener('DOMContentLoaded', function() {
-    const locationBtn = document.querySelector('.location-dropdown-btn');
-    const locationOptions = document.querySelectorAll('.location-dropdown-content a');
+    const locationBtn = document.querySelector('.locationDropdownBtn');
+    const locationOptions = document.querySelectorAll('.locationDropdownContent a');
 
     if (locationBtn && !locationBtn.textContent.trim()) {
         locationBtn.textContent = 'Berlin';

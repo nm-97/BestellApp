@@ -1,0 +1,146 @@
+@media (max-width: 1260px) {
+    .menuItem {
+        height: 210px;
+        width: 210px;
+        min-width: 210px;
+    }
+}
+
+@media (max-width: 1060px) {
+    .menu {
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .Vorspeisen .menu,
+    .Hauptspeisen .menu,
+    .Nachspeisen .menu {
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 980px) {
+    .menu {
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .Vorspeisen .menu,
+    .Hauptspeisen .menu,
+    .Nachspeisen .menu {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .menuItem {
+        width: 200px;
+        min-width: 200px;
+        height: 200px;
+    }
+
+    .menu h3 {
+        font-size: 18px;
+    }
+
+    .menu p {
+        font-size: 12px;
+    }
+
+    .menu button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .Vorspeisen,
+    .Hauptspeisen,
+    .Nachspeisen {
+        margin: 20px 0;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 840px) {
+    .heroContainer h1 {
+        font-size: 3rem;
+    }
+
+    .heroContainer p {
+        font-size: 1.5rem;
+    }
+
+    .menuItem {
+        height: 180px;
+        width: 180px;
+        min-width: 180px;
+    }
+
+    .menuItem img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .menu h3 {
+        font-size: 16px;
+    }
+
+    .menu p {
+        font-size: 11px;
+    }
+
+    .menu button {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .Vorspeisen,
+    .Hauptspeisen,
+    .Nachspeisen {
+        margin: 15px 0;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 490px) {
+    .menu {
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .Vorspeisen .menu,
+    .Hauptspeisen .menu,
+    .Nachspeisen .menu {
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .menuItem {
+        width: 160px;
+        min-width: 160px;
+        height: 160px;
+    }
+
+    .heroContainerContent {
+        margin-top: 195px;
+    }
+    
+    .Vorspeisen,
+    .Hauptspeisen,
+    .Nachspeisen {
+        margin: 10px 0;
+        padding: 0 5px;
+    }
+
+    .menu h3 {
+        font-size: 14px;
+    }
+
+    .menu p {
+        font-size: 10px;
+    }
+
+    .menu button {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+}

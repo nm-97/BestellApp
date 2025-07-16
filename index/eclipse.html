@@ -1,132 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eclipse Dining - BestellApp</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/cart.css">
-    <link rel="stylesheet" href="../style/restaurant.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/header.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link rel="stylesheet" href="../style/cart.css" />
+    <link rel="stylesheet" href="../style/restaurant.css" />
+    <link rel="stylesheet" href="../style/responsive.css" />
+    <link rel="stylesheet" href="../style/footer-responsive.css" />
+    <link rel="stylesheet" href="../style/restaurant-responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body onload="renderShoppingCart()">
+  <body onload="renderShoppingCart()">
+    <div class="mainContent">
+      <header class="hero">
+        <div id="menurow" class="menurowPosition">
+          <nav class="navbar">
+            <a href="../index/index.html"
+              ><img class="navbarLogo" src="../img/Logo.png" alt="logo"
+            /></a>
+            <hr class="solid" />
+            <ul>
+              <li><a href="../index/index.html">Startseite</a></li>
 
-    <header class="hero">
-        <div id="menurow" class="menurow-positon">
-            
-            <nav class="navbar">
-                <a href="../index/index.html"><img class="navbarLogo" src="../img/Logo.png" alt="logo"></a>
-                <hr class="solid">   
-                <ul>
-                    <li><a href="../index/index.html">Startseite</a></li>
+              <li class="dropdown">
+                <a href="#restaurants" class="dropbtn">Restaurants</a>
+                <div class="dropdownContent">
+                  <a href="../index/velvet.html">The Velvet Fork</a>
+                  <a href="../index/eclipse.html">Eclipse Dining</a>
+                  <a href="../index/celestial.html">Celestial Table</a>
+                </div>
+              </li>
 
-                    <li class="dropdown">
-                        <a href="#restaurants" class="dropbtn">Restaurants</a>
-                        <div class="dropdown-content">
-                            <a href="../index/velvet.html">The Velvet Fork</a>
-                            <a href="../index/eclipse.html">Eclipse Dining</a>
-                            <a href="../index/celestial.html">Celestial Table</a>
-                        </div>
-                    </li>
-
-                    <li class="location">
-                        <button class="location-dropdown-btn">Berlin</button>
-                        <div class="location-dropdown-content">
-                            <a href="#" data-location="berlin">Berlin</a>
-                            <a href="#" data-location="hamburg">Hamburg</a>
-                            <a href="#" data-location="muenchen">München</a>
-                            <a href="#" data-location="frankfurt">Frankfurt</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+              <li class="location">
+                <button class="locationDropdownBtn">Berlin</button>
+                <div class="locationDropdownContent">
+                  <a href="#" data-location="berlin">Berlin</a>
+                  <a href="#" data-location="hamburg">Hamburg</a>
+                  <a href="#" data-location="muenchen">München</a>
+                  <a href="#" data-location="frankfurt">Frankfurt</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
         </div>
-        
+
         <section>
-            <div class="hero-content">
-                <h1>Eclipse Dining</h1>
-                <p>Genießen Sie die erlesene Küche von Eclipse Dining – jetzt direkt zu Ihnen geliefert. <br>
-                    Hochwertige Zutaten, meisterhaft zubereitet und frisch serviert.</p>
-            </div>
+          <div class="heroContent">
+            <h1>Eclipse Dining</h1>
+            <p>
+              Genießen Sie die erlesene Küche von Eclipse Dining – jetzt direkt
+              zu Ihnen geliefert. <br />
+              Hochwertige Zutaten, meisterhaft zubereitet und frisch serviert.
+            </p>
+          </div>
         </section>
-    </header>
+      </header>
 
-    <section id="restaurant_menu_content">
-        <div class="menu_header">
-            <h1>Unsere Spezialitäten</h1>
-            <button onclick="toogleShoppingCart()" class="cart_button">
-                <img src="../icons/cart.png" alt="Warenkorb">
-                <span>Warenkorb</span>
+      <section id="restaurantMenuContent">
+        <div class="menuHeader">
+          <h1>Unsere Spezialitäten</h1>
+          <button onclick="toogleShoppingCart()" class="cartButton">
+            <img src="../icons/cart.png" alt="Warenkorb" />
+            <span>Warenkorb</span>
+          </button>
+        </div>
+
+        <div class="menuCategories">
+          <!-- Vorspeisen -->
+          <div class="categorySection">
+            <h2>Vorspeisen</h2>
+            <div class="dishesGrid" id="startersMenu"></div>
+          </div>
+
+          <!-- Hauptspeisen -->
+          <div class="categorySection">
+            <h2>Hauptspeisen</h2>
+            <div class="dishesGrid" id="mainMenu"></div>
+          </div>
+
+          <!-- Nachspeisen -->
+          <div class="categorySection">
+            <h2>Nachspeisen</h2>
+            <div class="dishesGrid" id="dessertMenu"></div>
+          </div>
+        </div>
+
+        <section class="shoppingCartContent">
+          <div class="shoppingCart" id="shoppingCart">
+            <button onclick="closeShoppingCart()" class="closeButton">
+              <img src="../icons/close.png" alt="Schließen" />
             </button>
-        </div>
-        
-        <div class="menu_categories">
-            <!-- Vorspeisen -->
-            <div class="category_section">
-                <h2>Vorspeisen</h2>
-                <div class="dishes_grid" id="starters_menu"></div>
-            </div>
-            
-            <!-- Hauptspeisen -->
-            <div class="category_section">
-                <h2>Hauptspeisen</h2>
-                <div class="dishes_grid" id="main_menu"></div>
-            </div>
-            
-            <!-- Nachspeisen -->
-            <div class="category_section">
-                <h2>Nachspeisen</h2>
-                <div class="dishes_grid" id="dessert_menu"></div>
-            </div>
-        </div>
-        
-        <section class="shoppingCart_content">
-            <div class="shoppingCart" id="shoppingCart">
-                <button onclick="closeShoppingCart()" class="close_button">
-                    <img src="../icons/close.png" alt="Schließen">
-                </button>
-                <h2>Warenkorb</h2>
-                <div class="position_items" id="cartItems"></div>
+            <h2>Warenkorb</h2>
+            <div class="positionItems" id="cartItems"></div>
 
-                <div class="shopping-cart-total">
-                    <strong>Gesamt: <span id="totalPrice">0.00</span> €</strong>
-                    <button id="orderButton">Bestellen</button>
-                </div>
+            <div class="shoppingCartTotal">
+              <strong>Gesamt: <span id="totalPrice">0.00</span> €</strong>
+              <button id="orderButton">Bestellen</button>
             </div>
+          </div>
         </section>
-    </section>
-    <footer>
-        <div class="footer-content">
-            <a href="#menurow"><img class="footer-content-logo" src="../img/Logo.png" alt=""></a>
-            <div class="contact">
-                <p>&copy; 2024 BestellApp | Designed by Nico Merz</p>
-            </div>
+      </section>
+      <footer>
+        <div class="footerContent">
+          <a href="#menurow"
+            ><img class="footerContentLogo" src="../img/Logo.png" alt=""
+          /></a>
+          <div class="contact">
+            <p>&copy; 2024 BestellApp | Designed by Nico Merz</p>
+          </div>
 
-            <div class="footer-section social">
-                <h2>Folgen Sie uns</h2>
-                <div class="social-icons">
-                    <a class="" href="https://www.facebook.com/developer.akademie/" target=" _blank"><img
-                            src="../icons/facebook-48.png" alt=""></a>
-                    <a href="https://www.youtube.com/watch?v=XppnZ5n3Z04" target=" _blank"><img
-                            src="../icons/youtube-48.png" alt=""></a>
-                    <a href="https://www.instagram.com/developer.akademie/?hl=de" target=" _blank"><img
-                            src="../icons/icons8-instagram-48.png" alt=""></a>
-                </div>
+          <div class="footerSection social">
+            <h2>Folgen Sie uns</h2>
+            <div class="socialIcons">
+              <a
+                class=""
+                href="https://www.facebook.com/developer.akademie/"
+                target=" _blank"
+                ><img src="../icons/facebook-48.png" alt=""
+              /></a>
+              <a
+                href="https://www.youtube.com/watch?v=XppnZ5n3Z04"
+                target=" _blank"
+                ><img src="../icons/youtube-48.png" alt=""
+              /></a>
+              <a
+                href="https://www.instagram.com/developer.akademie/?hl=de"
+                target=" _blank"
+                ><img src="../icons/icons8-instagram-48.png" alt=""
+              /></a>
             </div>
+          </div>
         </div>
-    </footer>
+      </footer>
+    </div>
 
     <script src="../js/render.js"></script>
     <script src="../js/menu_template.js"></script>
     <script src="../js/eclipse_cart.js"></script>
     <script src="../js/restauranttemplate.js"></script>
-</body>
-
+  </body>
 </html>
