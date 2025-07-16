@@ -1,0 +1,127 @@
+.shoppingCart {
+    width: 320px;
+    height: 100%;
+    background-color: #333;
+    font-family: "Roboto", sans-serif;
+    border-radius: 20px;
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 1000;
+    display: none;
+}
+
+.shoppingCart h2 {
+    color: white;
+    text-align: center;
+    margin: 20px;
+    text-shadow: #333 2px 2px;
+}
+
+.remove {
+    background-color: #ff6347;
+    cursor: pointer;
+    border: none;
+    height: 21px;
+    width: 21px;
+    border-radius: 5px;
+}
+
+.closeButton {
+    color: white;
+    height: 50px;
+    width: 50px;
+    border: none;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.closeButton:hover {
+    background-color: #ff4500;
+}
+
+.closeButton img {
+    height: 100%;
+    width: 100%;
+}
+
+.positionItems {
+    overflow-y: scroll;
+}
+
+.shoppingCartItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: rgba(194, 193, 193, 0.411) 2px solid;
+    background-color: #a1a1a1a2;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.increase,
+.decrease {
+    background-color: #ff6347;
+    cursor: pointer;
+    border: none;
+    height: 21px;
+    width: 21px;
+    border-radius: 5px;
+}
+
+.increase:hover,
+.decrease:hover {
+    background-color: #ff4500;
+}
+
+.itemName {
+    color: white;
+    font-size: 1em;
+    width: 100px;
+    text-align: center;
+}
+
+.itemPrice {
+    color: white;
+    font-size: 1em;
+}
+
+.itemQuantity {
+    color: white;
+    font-size: 1em;
+}
+
+.itemTotal {
+    color: white;
+    font-size: 1em;
+}
+
+.shopping-cart-total {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #333;
+    color: white;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+
+    button {
+        background-color: #ff6347;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #ff4500;
+        }
+    }
+}

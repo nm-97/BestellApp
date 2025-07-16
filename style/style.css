@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/hero.jpg');
+    backdrop-filter: blur(2px);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurantHeader {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px 16px 24px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.08) 0%, 
+        rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 24px 24px 0 0;
+}
+
+.restaurantLogos {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-right: 16px;
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.restaurantLogos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.restaurantLogos:hover::before {
+    opacity: 1;
+}
+
+.restaurantBox:hover .restaurantLogos {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+#restaurantContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.IndexRestaurant {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 15px 40px 40px 40px;
+    margin-top: 130px;
+
+}
+
+.restaurantContent {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 40px 40px 40px;
+}
+
+.IndexHero {
+    margin-top: 50px;
+
+}
+
+.IndexHero h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.9),
+        0 4px 15px rgba(0, 0, 0, 0.8),
+        0 2px 8px rgba(0, 0, 0, 0.6);
+    position: relative;
+    font-weight: 700;
+}
+
+.restaurantContent h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.9),
+        0 2px 6px rgba(0, 0, 0, 0.8),
+        0 1px 3px rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.98);
+    letter-spacing: 0.5px;
+}
+
+.restaurantBox {
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.22) 0%, 
+        rgba(255, 255, 255, 0.15) 30%,
+        rgba(255, 255, 255, 0.10) 70%,
+        rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(80px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 19px;
+    box-shadow: 
+        0 25px 80px rgba(0, 0, 0, 0.35),
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 400px;
+    height: 380px;
+    flex: 1;
+
+}
+
+.restaurantBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        transparent 30%, 
+        rgba(255, 99, 71, 0.12) 70%,
+        rgba(255, 255, 255, 0.15) 100%);
+    transition: opacity 0.6s ease;
+    border-radius: 32px;
+    z-index: 0;
+}
+
+
+.restaurantBox::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.15), 
+        transparent 25%, 
+        rgba(255, 99, 71, 0.15) 60%, 
+        rgba(255, 255, 255, 0.15) 85%);
+    border-radius: 35px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.restaurantBox:hover::before {
+    opacity: 1;
+}
+
+.restaurantBox:hover::after {
+    opacity: 1;
+}
+
+.restaurantBox:hover {
+    transform: translateY(-15px) scale(1.03) rotateX(3deg);
+    box-shadow: 
+        0 50px 140px rgba(0, 0, 0, 0.5),
+        0 25px 70px rgba(0, 0, 0, 0.4),
+        inset 0 3px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.restaurantInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.restaurantInfo h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.8),
+        0 2px 8px rgba(0, 0, 0, 0.6),
+        0 1px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.3px;
+}
+
+.restaurantInfo h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 99, 71, 0.5));
+    transition: width 0.5s ease;
+    border-radius: 2px;
+}
+
+.restaurantBox:hover .restaurantInfo h3::after {
+    width: 70%;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    width: fit-content;
+}
+
+.rating:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.05);
+}
+
+.rating .checked {
+    color: #ffb400;
+    text-shadow: 
+        0 3px 12px rgba(0, 0, 0, 0.8),
+        0 2px 8px rgba(255, 180, 0, 0.6),
+        0 0 15px rgba(255, 180, 0, 0.4);
+    filter: drop-shadow(0 0 8px rgba(255, 180, 0, 0.6));
+    font-size: 1.2em;
+}
+
+.rating .fa-star {
+    transition: all 0.3s ease;
+}
+
+.rating .fa-star:hover {
+    transform: scale(1.2);
+}
+
+.ratingText {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.7),
+        0 1px 3px rgba(0, 0, 0, 0.5);
+    margin-left: 4px;
+    letter-spacing: 0.2px;
+}
+
+.restaurantDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 20px 20px;
+    position: relative;
+    z-index: 1;
+    gap: 8px;
+}
+
+.rating, .deliveryTime, .paymentMethods {
+    padding: 10px 12px;
+}
+
+.deliveryInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
+    height: 60px;
+}
+
+.deliveryTime {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+}
+
+.deliveryTime:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.deliveryTime img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(1.2);
+}
+
+.deliveryTime span {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.paymentMethods {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+}
+
+.paymentMethods:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.paymentMethods img {
+    height: 20px;
+    width: 23px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.paymentMethods img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.restaurantActions {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+}
+
+ .actionButton {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3rem;
+    color: #ff6347;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    position: relative;
+    text-decoration: none;
+    transition: 0.2s transform ease-in-out;
+    will-change: transform;
+    z-index: 0;
+    cursor: pointer;
+    background: linear-gradient(145deg, 
+        rgba(33, 37, 41, 0.97) 0%, 
+        rgba(52, 58, 64, 0.92) 50%, 
+        rgba(33, 37, 41, 0.97) 100%);
+}
+
+ .actionButton::after {
+    background-color: #ff6347;
+    border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+}
+
+ .actionButton:hover::after {
+    transform: translate(0, 0);
+}
+
+ .actionButton:hover {
+    color: white;
+    transform: scale(1.05);
+    will-change: transform;
+}
